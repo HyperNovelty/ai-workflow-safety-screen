@@ -33,19 +33,19 @@ The scripts do not call external APIs, deploy services, phone home, or require n
 Validate the example:
 
 ```bash
-python3 scripts/validate_screen.py examples/service-team-workflow-screen.example.json
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_screen.py examples/service-team-workflow-screen.example.json
 ```
 
-Render the example to a local HTML file:
+Render the example to a checked-in demo HTML file:
 
 ```bash
-python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json /tmp/ai-workflow-safety-screen-example.html
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json examples/rendered/service-team-workflow-screen.example.html
 ```
 
 Run tests:
 
 ```bash
-python3 -m unittest discover -s tests
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests
 ```
 
 ## Human Review Rule
@@ -70,7 +70,11 @@ Teams may still require human review for other reasons. This rule is a floor, no
 - `scripts/render_screen_html.py` renders a local review page.
 - `docs/field-guide.md` explains the fields and suggested review posture.
 - `docs/public-safety-boundary.md` lists public-release boundaries.
+- `docs/open-lab-positioning.md` explains the repo's role in the six-repo public proof footprint.
+- `examples/rendered/service-team-workflow-screen.example.html` is a synthetic rendered demo.
 
 ## Provenance
 
 This public candidate is inspired by a local AWSE prototype, but it is not a copy of the full prototype. It excludes local dashboards, product-package exports, build artifacts, private candidate data, caches, virtual environments, account tooling, and prototype internals. The included example is synthetic and reduced for public-good educational use.
+
+In public language, treat this as AWSE-adjacent proof of review posture and artifact design, not as an operational AWSE release, compliance engine, or safety certification.

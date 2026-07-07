@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service Team Response Preparation - AI Workflow Safety Screen</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; margin: 2rem auto; max-width: 980px; padding: 0 1rem; color: #1f2933; }
+    header { border-bottom: 1px solid #d8dee6; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+    h1, h2 { line-height: 1.2; }
+    section { margin: 1.25rem 0; }
+    .meta { color: #52616f; }
+    .review { display: inline-block; border: 1px solid #8a4b08; background: #fff5e6; color: #4a2a04; padding: 0.35rem 0.55rem; border-radius: 4px; font-weight: bold; }
+    .boundary { border-left: 4px solid #52616f; background: #f4f7fa; padding: 0.8rem 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Service Team Response Preparation</h1>
+    <p class="meta">Screen ID: service_team_response_prep_v1 | Date: 2026-07-06</p>
+    <p><span class="review">Human review: Required</span></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Team Context</h2>
+      <p>Synthetic service team reviewing whether AI can help prepare draft response notes for routine inbound questions.</p>
+    </section>
+
+    <section>
+      <h2>Workflow Summary</h2>
+      <p>A human receives a service inquiry, uses AI to draft a missing-information checklist and possible escalation note, then a named human writes and sends the final response.</p>
+    </section>
+
+    <section>
+      <h2>AI Use Case</h2>
+      <p>AI may summarize public-safe inquiry context, suggest missing questions, and flag possible escalation. AI may not send messages, make promises, decide eligibility, or provide professional advice.</p>
+    </section>
+
+    <section>
+      <h2>Risk Flags</h2>
+      <ul>
+          <li>customer_data</li>
+          <li>public_posting</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Recommended Controls</h2>
+      <ul>
+          <li>Use synthetic or redacted context during pilots.</li>
+          <li>Name a human reviewer for every final customer-facing response.</li>
+          <li>Require human approval before any message is sent or posted.</li>
+          <li>Escalate legal, medical, payment, employment, security, or distress signals to the correct owner.</li>
+          <li>Stop the pilot if customers are confused, distressed, misrouted, or given unsupported promises.</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Not For</h2>
+      <ul>
+          <li>autonomous customer-facing send</li>
+          <li>legal advice</li>
+          <li>medical or clinical advice</li>
+          <li>financial, tax, insurance, or investment advice</li>
+          <li>employment or eligibility decisions</li>
+          <li>sensitive data capture</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <p>Synthetic example only. No customer records, credentials, account data, private candidate data, or production systems are represented.</p>
+    </section>
+
+    <section class="boundary">
+      <h2>Boundary</h2>
+      <p>This screen is not legal, compliance, procurement, cybersecurity, medical, financial, employment, or production approval advice. It is a local review aid only.</p>
+    </section>
+  </main>
+</body>
+</html>

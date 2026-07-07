@@ -17,7 +17,7 @@ Run:
 
 ```bash
 python3 scripts/validate_screen.py examples/service-team-workflow-screen.example.json
-python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json /tmp/ai-workflow-safety-screen-example.html
+python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json examples/rendered/service-team-workflow-screen.example.html
 python3 -m unittest discover -s tests
 git diff --check
 ```
