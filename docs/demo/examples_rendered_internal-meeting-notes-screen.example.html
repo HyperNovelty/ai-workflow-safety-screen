@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internal Meeting Notes Cleanup - AI Workflow Safety Screen</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; margin: 2rem auto; max-width: 980px; padding: 0 1rem; color: #1f2933; }
+    header { border-bottom: 1px solid #d8dee6; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+    h1, h2 { line-height: 1.2; }
+    section { margin: 1.25rem 0; }
+    .meta { color: #52616f; }
+    .review { display: inline-block; border: 1px solid #8a4b08; background: #fff5e6; color: #4a2a04; padding: 0.35rem 0.55rem; border-radius: 4px; font-weight: bold; }
+    .boundary { border-left: 4px solid #52616f; background: #f4f7fa; padding: 0.8rem 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Internal Meeting Notes Cleanup</h1>
+    <p class="meta">Screen ID: internal_meeting_notes_v1 | Date: 2026-07-07</p>
+    <p><span class="review">Human review: Not required by this screen</span></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Team Context</h2>
+      <p>Synthetic operations team considering whether AI can help turn public-safe meeting bullets into a clearer internal recap.</p>
+    </section>
+
+    <section>
+      <h2>Workflow Summary</h2>
+      <p>A team member pastes synthetic or non-sensitive meeting bullets into an AI tool, asks for a clearer summary, then checks the summary before saving it in the team&#x27;s ordinary notes.</p>
+    </section>
+
+    <section>
+      <h2>AI Use Case</h2>
+      <p>AI may reformat public-safe bullets, group action items, and suggest neutral wording. AI may not add commitments, infer private context, contact anyone, or make decisions.</p>
+    </section>
+
+    <section>
+      <h2>Risk Flags</h2>
+      <ul>
+          <li>low_consequence</li>
+          <li>internal_draft</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Recommended Controls</h2>
+      <ul>
+          <li>Use only synthetic or non-sensitive meeting bullets.</li>
+          <li>Check that the summary does not invent decisions, owners, dates, or promises.</li>
+          <li>Keep a human owner for final saved notes.</li>
+          <li>Escalate if private personnel, customer, legal, financial, health, or security details appear.</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Not For</h2>
+      <ul>
+          <li>private personnel notes</li>
+          <li>customer records</li>
+          <li>legal or compliance summaries</li>
+          <li>security incident notes</li>
+          <li>autonomous task assignment</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <p>Low-risk proceed-with-standard-review example. It does not remove the need for ordinary human checking before reuse.</p>
+    </section>
+
+    <section class="boundary">
+      <h2>Boundary</h2>
+      <p>This screen is not legal, compliance, procurement, cybersecurity, medical, financial, employment, or production approval advice. It is a local review aid only.</p>
+    </section>
+  </main>
+</body>
+</html>
