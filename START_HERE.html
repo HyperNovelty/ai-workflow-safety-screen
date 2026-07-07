@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Workflow Safety Screen - Start Here</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; margin: 2rem auto; max-width: 860px; padding: 0 1rem; color: #1f2933; }
+    h1, h2 { line-height: 1.2; }
+    code { background: #eef2f6; padding: 0.1rem 0.25rem; border-radius: 4px; }
+    pre { background: #101820; color: #f7fafc; padding: 1rem; overflow-x: auto; border-radius: 6px; }
+    .notice { border-left: 4px solid #5b7c99; padding: 0.75rem 1rem; background: #f4f7fa; }
+  </style>
+</head>
+<body>
+  <h1>AI Workflow Safety Screen</h1>
+  <p class="notice">Local-only public candidate. Use this kit to make an early human-review decision for a proposed AI-assisted workflow.</p>
+
+  <h2>Start</h2>
+  <pre>python3 scripts/validate_screen.py examples/service-team-workflow-screen.example.json
+python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json /tmp/ai-workflow-safety-screen-example.html</pre>
+
+  <h2>Read First</h2>
+  <ul>
+    <li><a href="README.md">README.md</a></li>
+    <li><a href="docs/field-guide.md">docs/field-guide.md</a></li>
+    <li><a href="docs/public-safety-boundary.md">docs/public-safety-boundary.md</a></li>
+  </ul>
+
+  <h2>Boundary</h2>
+  <p>This kit is not legal, compliance, procurement, cybersecurity, medical, financial, employment, or insurance advice. It is not an approval mechanism and must not be used to collect sensitive data.</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "screen_id": "service_team_response_prep_v1",
+  "title": "Service Team Response Preparation",
+  "date": "2026-07-06",
+  "team_context": "Synthetic service team reviewing whether AI can help prepare draft response notes for routine inbound questions.",
+  "workflow_summary": "A human receives a service inquiry, uses AI to draft a missing-information checklist and possible escalation note, then a named human writes and sends the final response.",
+  "ai_use_case": "AI may summarize public-safe inquiry context, suggest missing questions, and flag possible escalation. AI may not send messages, make promises, decide eligibility, or provide professional advice.",
+  "risk_flags": [
+    "customer_data",
+    "public_posting"
+  ],
+  "human_review_required": true,
+  "recommended_controls": [
+    "Use synthetic or redacted context during pilots.",
+    "Name a human reviewer for every final customer-facing response.",
+    "Require human approval before any message is sent or posted.",
+    "Escalate legal, medical, payment, employment, security, or distress signals to the correct owner.",
+    "Stop the pilot if customers are confused, distressed, misrouted, or given unsupported promises."
+  ],
+  "not_for": [
+    "autonomous customer-facing send",
+    "legal advice",
+    "medical or clinical advice",
+    "financial, tax, insurance, or investment advice",
+    "employment or eligibility decisions",
+    "sensitive data capture"
+  ],
+  "notes": "Synthetic example only. No customer records, credentials, account data, private candidate data, or production systems are represented."
+}

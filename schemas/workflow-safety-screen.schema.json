@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/workflow-safety-screen.schema.json",
+  "title": "AI Workflow Safety Screen",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "screen_id",
+    "title",
+    "date",
+    "team_context",
+    "workflow_summary",
+    "ai_use_case",
+    "risk_flags",
+    "human_review_required",
+    "recommended_controls",
+    "not_for",
+    "notes"
+  ],
+  "properties": {
+    "screen_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "minLength": 1 },
+    "team_context": { "type": "string", "minLength": 1 },
+    "workflow_summary": { "type": "string", "minLength": 1 },
+    "ai_use_case": { "type": "string", "minLength": 1 },
+    "risk_flags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "human_review_required": { "type": "boolean" },
+    "recommended_controls": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "not_for": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "risk_flags": {
+            "contains": {
+              "enum": [
+                "customer_data",
+                "payment",
+                "legal",
+                "medical",
+                "employment",
+                "public_posting",
+                "security"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "human_review_required": { "const": true }
+        }
+      }
+    }
+  ]
+}
