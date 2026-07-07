@@ -2,7 +2,7 @@
 
 A local-only screening kit for teams deciding whether an AI-assisted workflow should require human review before use.
 
-This repository is a public candidate carved from ideas in a local AI Workflow Safety Engine prototype. It is intentionally reduced: one plain JSON screen format, one synthetic example, one validator, one HTML renderer, and short field guidance.
+This repository is a public candidate carved from ideas in a local AI Workflow Safety Engine prototype. It is intentionally reduced: one plain JSON screen format, synthetic examples across a judgment range, one validator, one HTML renderer, and short field guidance.
 
 ## What It Is
 
@@ -16,7 +16,7 @@ It helps small teams, service teams, nonprofits, civic groups, learning programs
 - Validates required fields and basic field types.
 - Requires `human_review_required: true` when high-consequence risk flags are present.
 - Renders a Windows-openable HTML review page using Python standard library only.
-- Includes a synthetic service-team example with no customer, account, credential, or private data.
+- Includes synthetic examples with no customer, account, credential, or private data.
 
 ## What It Does Not Do
 
@@ -34,12 +34,16 @@ Validate the example:
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_screen.py examples/service-team-workflow-screen.example.json
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_screen.py examples/internal-meeting-notes-screen.example.json
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_screen.py examples/student-support-triage-screen.example.json
 ```
 
 Render the example to a checked-in demo HTML file:
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_screen_html.py examples/service-team-workflow-screen.example.json examples/rendered/service-team-workflow-screen.example.html
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_screen_html.py examples/internal-meeting-notes-screen.example.json examples/rendered/internal-meeting-notes-screen.example.html
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/render_screen_html.py examples/student-support-triage-screen.example.json examples/rendered/student-support-triage-screen.example.html
 ```
 
 Run tests:
@@ -62,16 +66,22 @@ If `risk_flags` contains any of these values, `human_review_required` must be `t
 
 Teams may still require human review for other reasons. This rule is a floor, not a full risk model.
 
+## Example Judgment Range
+
+- `examples/internal-meeting-notes-screen.example.json` shows a low-risk `proceed-with-standard-review` posture for synthetic, non-sensitive internal drafting.
+- `examples/service-team-workflow-screen.example.json` shows a human-review-required posture before any customer-facing response.
+- `examples/student-support-triage-screen.example.json` shows a blocked-use/redesign-required posture for autonomous support triage.
+
 ## Files
 
 - `schemas/workflow-safety-screen.schema.json` describes the screen shape.
-- `examples/service-team-workflow-screen.example.json` is a synthetic example.
+- `examples/*.example.json` are synthetic examples across the judgment range.
 - `scripts/validate_screen.py` validates a screen file.
 - `scripts/render_screen_html.py` renders a local review page.
 - `docs/field-guide.md` explains the fields and suggested review posture.
 - `docs/public-safety-boundary.md` lists public-release boundaries.
 - `docs/open-lab-positioning.md` explains the repo's role in the six-repo public proof footprint.
-- `examples/rendered/service-team-workflow-screen.example.html` is a synthetic rendered demo.
+- `examples/rendered/*.example.html` are synthetic rendered demos.
 
 ## Provenance
 

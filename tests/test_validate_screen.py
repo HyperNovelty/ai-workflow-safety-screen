@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import unittest
+from pathlib import Path
 
 from scripts.validate_screen import validate_screen
 
@@ -42,6 +44,13 @@ class ValidateScreenTests(unittest.TestCase):
         screen["private_path"] = "/home/example/private"
         errors = validate_screen(screen)
         self.assertIn("unexpected field: private_path", errors)
+
+    def test_checked_in_examples_are_valid(self) -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        for path in sorted((repo_root / "examples").glob("*.example.json")):
+            with self.subTest(path=path.name):
+                data = json.loads(path.read_text(encoding="utf-8"))
+                self.assertEqual(validate_screen(data), [])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+{
+  "screen_id": "internal_meeting_notes_v1",
+  "title": "Internal Meeting Notes Cleanup",
+  "date": "2026-07-07",
+  "team_context": "Synthetic operations team considering whether AI can help turn public-safe meeting bullets into a clearer internal recap.",
+  "workflow_summary": "A team member pastes synthetic or non-sensitive meeting bullets into an AI tool, asks for a clearer summary, then checks the summary before saving it in the team's ordinary notes.",
+  "ai_use_case": "AI may reformat public-safe bullets, group action items, and suggest neutral wording. AI may not add commitments, infer private context, contact anyone, or make decisions.",
+  "risk_flags": [
+    "low_consequence",
+    "internal_draft"
+  ],
+  "human_review_required": false,
+  "recommended_controls": [
+    "Use only synthetic or non-sensitive meeting bullets.",
+    "Check that the summary does not invent decisions, owners, dates, or promises.",
+    "Keep a human owner for final saved notes.",
+    "Escalate if private personnel, customer, legal, financial, health, or security details appear."
+  ],
+  "not_for": [
+    "private personnel notes",
+    "customer records",
+    "legal or compliance summaries",
+    "security incident notes",
+    "autonomous task assignment"
+  ],
+  "notes": "Low-risk proceed-with-standard-review example. It does not remove the need for ordinary human checking before reuse."
+}

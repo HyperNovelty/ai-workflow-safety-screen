@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import unittest
+import json
+from pathlib import Path
 
 from scripts.render_screen_html import render_screen_html
 
@@ -35,6 +37,20 @@ class RenderScreenHtmlTests(unittest.TestCase):
         output = render_screen_html(valid_screen())
         self.assertIn("Human review: Required", output)
         self.assertIn("Human review before send.", output)
+
+    def test_checked_in_examples_render_expected_titles(self) -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        expected_titles = {
+            "internal-meeting-notes-screen.example.json": "Internal Meeting Notes Cleanup",
+            "service-team-workflow-screen.example.json": "Service Team Response Preparation",
+            "student-support-triage-screen.example.json": "Student Support Triage",
+        }
+        for filename, title in expected_titles.items():
+            with self.subTest(filename=filename):
+                data = json.loads((repo_root / "examples" / filename).read_text(encoding="utf-8"))
+                output = render_screen_html(data)
+                self.assertIn(title, output)
+                self.assertIn("Boundary", output)
 
 
 if __name__ == "__main__":

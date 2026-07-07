@@ -1,0 +1,29 @@
+{
+  "screen_id": "student_support_triage_blocked_v1",
+  "title": "Student Support Triage",
+  "date": "2026-07-07",
+  "team_context": "Synthetic learning program considering whether AI should classify student support messages and route urgent cases.",
+  "workflow_summary": "The proposed workflow would ingest student messages, assign urgency labels, recommend support actions, and route cases to staff queues without a named human reviewer before triage.",
+  "ai_use_case": "AI would be asked to detect distress, infer support needs, and prioritize staff response. In this screen, that design is blocked and should be redesigned around qualified human review and local policy.",
+  "risk_flags": [
+    "medical",
+    "security",
+    "customer_data"
+  ],
+  "human_review_required": true,
+  "recommended_controls": [
+    "Do not pilot the autonomous triage design described here.",
+    "Redesign around qualified human intake, local policy, and emergency/escalation procedures.",
+    "Use synthetic examples only while discussing the workflow.",
+    "Separate any harmless drafting aid from decisions about urgency, safety, services, or eligibility.",
+    "Require explicit local approval before any student-facing or staff-routing use."
+  ],
+  "not_for": [
+    "autonomous student support triage",
+    "distress or self-harm detection",
+    "medical or mental-health advice",
+    "discipline or eligibility decisions",
+    "collection of student records in public examples"
+  ],
+  "notes": "Blocked-use/redesign-required example. The validation pass only confirms the screen format and human-review rule; it does not approve the workflow."
+}

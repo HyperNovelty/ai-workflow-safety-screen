@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Support Triage - AI Workflow Safety Screen</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; margin: 2rem auto; max-width: 980px; padding: 0 1rem; color: #1f2933; }
+    header { border-bottom: 1px solid #d8dee6; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+    h1, h2 { line-height: 1.2; }
+    section { margin: 1.25rem 0; }
+    .meta { color: #52616f; }
+    .review { display: inline-block; border: 1px solid #8a4b08; background: #fff5e6; color: #4a2a04; padding: 0.35rem 0.55rem; border-radius: 4px; font-weight: bold; }
+    .boundary { border-left: 4px solid #52616f; background: #f4f7fa; padding: 0.8rem 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Student Support Triage</h1>
+    <p class="meta">Screen ID: student_support_triage_blocked_v1 | Date: 2026-07-07</p>
+    <p><span class="review">Human review: Required</span></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Team Context</h2>
+      <p>Synthetic learning program considering whether AI should classify student support messages and route urgent cases.</p>
+    </section>
+
+    <section>
+      <h2>Workflow Summary</h2>
+      <p>The proposed workflow would ingest student messages, assign urgency labels, recommend support actions, and route cases to staff queues without a named human reviewer before triage.</p>
+    </section>
+
+    <section>
+      <h2>AI Use Case</h2>
+      <p>AI would be asked to detect distress, infer support needs, and prioritize staff response. In this screen, that design is blocked and should be redesigned around qualified human review and local policy.</p>
+    </section>
+
+    <section>
+      <h2>Risk Flags</h2>
+      <ul>
+          <li>medical</li>
+          <li>security</li>
+          <li>customer_data</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Recommended Controls</h2>
+      <ul>
+          <li>Do not pilot the autonomous triage design described here.</li>
+          <li>Redesign around qualified human intake, local policy, and emergency/escalation procedures.</li>
+          <li>Use synthetic examples only while discussing the workflow.</li>
+          <li>Separate any harmless drafting aid from decisions about urgency, safety, services, or eligibility.</li>
+          <li>Require explicit local approval before any student-facing or staff-routing use.</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Not For</h2>
+      <ul>
+          <li>autonomous student support triage</li>
+          <li>distress or self-harm detection</li>
+          <li>medical or mental-health advice</li>
+          <li>discipline or eligibility decisions</li>
+          <li>collection of student records in public examples</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <p>Blocked-use/redesign-required example. The validation pass only confirms the screen format and human-review rule; it does not approve the workflow.</p>
+    </section>
+
+    <section class="boundary">
+      <h2>Boundary</h2>
+      <p>This screen is not legal, compliance, procurement, cybersecurity, medical, financial, employment, or production approval advice. It is a local review aid only.</p>
+    </section>
+  </main>
+</body>
+</html>
